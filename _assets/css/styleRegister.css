@@ -1,0 +1,479 @@
+/* =========================
+   GLOBAL RESET & BODY
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* =========================
+   LOGIN CARD CONTAINER
+========================= */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 32px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.login-card:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   HEADER
+========================= */
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-logo {
+  width: 40px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-header h2 {
+  color: #1a202c;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.login-header p {
+  color: #718096;
+  font-size: 14px;
+}
+
+/* =========================
+   FORM INPUTS
+========================= */
+.form-group {
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #1a202c;
+  background: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+  appearance: none;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.input-wrapper label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #94a3b8;
+  background: #fff;
+  padding: 0 6px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+/* Animasi label saat focus/isi */
+.input-wrapper input:focus + label,
+.input-wrapper input:valid + label,
+.input-wrapper select:focus + label,
+.input-wrapper select:valid + label {
+  transform: translateY(-32px) scale(0.85);
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* =========================
+   SELECT CUSTOM DROPDOWN
+========================= */
+.input-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='%2394a3b8' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+}
+
+/* =========================
+   PASSWORD TOGGLE ICON
+========================= */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #718096;
+  transition: color 0.2s ease;
+  z-index: 2;
+}
+
+.password-toggle:hover {
+  color: #3b82f6;
+}
+
+.toggle-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23718096' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   BUTTON STYLES
+========================= */
+.login-btn {
+  width: 100%;
+  background: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.login-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   SIGNUP LINK
+========================= */
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link p {
+  color: #718096;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.signup-link a:hover {
+  color: #2563eb;
+}
+
+/* =========================
+   POPUP SUCCESS
+========================= */
+.popup-success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-success.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-box {
+  background: #fff;
+  width: 350px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.4s ease;
+}
+
+.popup-box img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.popup-box h3 {
+  color: #2ecc71;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.popup-box button {
+  background: #2ecc71;
+  border: none;
+  padding: 10px 25px;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.popup-box button:hover {
+  background: #27ae60;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes slideDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px;
+  }
+
+  .login-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.popup-success,
+.popup-failed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-success.active,
+.popup-failed.active {
+  display: flex;
+}
+
+.popup-box {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 40px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: popupFade 0.3s ease;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-box img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.popup-box h3 {
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.popup-box button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.popup-box button:hover {
+  background: #2980b9;
+}
+
+/* ===== POPUP STYLE ===== */
+.popup-success,
+.popup-failed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-success.active,
+.popup-failed.active {
+  display: flex;
+}
+
+.popup-box {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 40px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: popupFade 0.3s ease;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-box img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.popup-box h3 {
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.popup-box button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.popup-box button:hover {
+  background: #2980b9;
+}
+
+.popup-failed .popup-box h3 {
+  color: #e74c3c !important; /* pastikan warna merah muncul */
+  font-weight: 700;
+}
+
+.popup-failed .popup-box p {
+  color: #e74c3c; /* agar pesan juga berwarna merah lembut */
+}
+
+.popup-failed .popup-box button {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.popup-failed .popup-box button:hover {
+  background: #c0392b;
+}
+
+/* ===== FORM STYLE ===== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.login-logo {
+  width: 40px;
+  height: 35px;
+  object-fit: contain;
+}
