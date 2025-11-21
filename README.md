@@ -1,4 +1,4 @@
-🏥 Medical Record System
+# 🏥 Medical Record System
 
 The Medical Record System is a web-based application for managing patient medical data digitally. This system is designed to help midwives and administrators record, organize, and monitor patient information efficiently and securely.
 
